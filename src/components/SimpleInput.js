@@ -24,6 +24,9 @@ const SimpleInput = () => {
         if (enteredNameIsEmpty) return
 
         //LOGIC........
+
+        setNameInput('');
+        setEnteredNameTouched(false)
     }
 
     return (
