@@ -7,6 +7,11 @@ const SimpleInput = () => {
     const enteredNameIsEmpty = nameInput.trim() === '';
     const enteredNameInvalid = enteredNameTouched && enteredNameIsEmpty;
 
+    let formIsValid;
+    if (enteredNameInvalid) {
+        formIsValid = false;
+    } else formIsValid = true;
+
     const classes = enteredNameInvalid ? 'form-control invalid' : 'form-control';
 
 
@@ -36,7 +41,7 @@ const SimpleInput = () => {
                 <input value={nameInput} onChange={changeNameHandler} onBlur={nameLoseFocusHandler} type='text' id='name' />
             </div>
             <div className="form-actions">
-                <button>Submit</button>
+                <button disabled={!formIsValid}>Submit</button>
             </div>
         </form>
     );
